@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth overflow-y-scroll;
+  }
+
+  body {
+    @apply font-sans;
+  }
+
+  /* ===== Custom Scrollbar ===== */
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-bglight dark:bg-bgdark;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#d5d5d5] dark:bg-carddark;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#b7b7b7] dark:bg-[#17222b];
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-11 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-20 max-w-6xl mx-auto lg:min-h-[768px];
+  }
+  .section-heading {
+    @apply text-2xl md:text-3xl xl:text-4xl inline-block my-6 font-medium;
+  }
+  .link-outline {
+    @apply outline-marrsgreen dark:outline-carrigreen;
+  }
+  .link {
+    @apply outline-marrsgreen dark:outline-carrigreen text-marrsdark hover:text-marrsgreen dark:text-carrilight dark:hover:text-carrigreen;
+  }
+  .glassmorphism {
+    @apply bg-clip-padding backdrop-filter backdrop-blur-xl !bg-opacity-50 dark:!bg-opacity-60;
+  }
+  .lower-glassmorphism {
+    @apply !bg-opacity-50 dark:!bg-opacity-60 after:!backdrop-blur-xl after:w-full after:h-full after:absolute after:top-0 after:left-0 after:-z-10;
+  }
+
+  /* Skills badges (polygon look, matches site colors) */
+  .skill-badge {
+    @apply w-20 h-20 flex items-center justify-center rounded-full relative bg-[#2b2f33] dark:bg-[#142029] shadow-md;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.6) 100%);
+  }
+
+  .skill-badge::before {
+    /* subtle polygon rim */
+    content: "";
+    @apply absolute inset-0 rounded-full;
+    background: conic-gradient(from 90deg, #6b7280, #9ca3af, #6b7280);
+    mask: radial-gradient(circle 70% at 50% 50%, transparent 60%, black 61%);
+    opacity: 0.65;
+  }
+
+  .skill-badge__img {
+    @apply relative z-10 flex items-center justify-center;
+  }
+
+  .skill-badge__image {
+    @apply drop-shadow-md;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .skill-badge__placeholder {
+    @apply relative z-10 text-xs text-textlight dark:text-textlight text-center px-2;
+  }
+}
+
+@layer utilities {
+  .swiper-padding {
+    padding: 0 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .swiper-padding-mobile {
+    padding: 0 !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+.swiper-pagination-bullet {
+  @apply dark:bg-gray-200;
+}
+.dark .swiper-pagination-bullet-active {
+  background-color: rgb(5 206 145) !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: rgb(0 140 140) !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply dark:text-carrigreen;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(0 140 140) !important;
+}
+@media only screen and (max-width: 480px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
+}

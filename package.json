@@ -1,0 +1,56 @@
+{
+  "name": "tejamallam-portfolio",
+  "version": "2.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format:check": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.11.4",
+    "next": "^15.4.5",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-rough-notation": "^1.0.3",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
+    "simple-icons": "^11.15.0",
+    "swiper": "^8.4.5"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.30.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.0.0",
+    "postcss": "^8.4.47",
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.4.5"
+  }
+  ,
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
