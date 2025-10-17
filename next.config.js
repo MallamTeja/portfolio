@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-
 const nextConfig = {
   async redirects() {
     return [
@@ -11,22 +10,45 @@ const nextConfig = {
       },
     ];
   },
-  // Append the default value with md extensions
+  
+  // File extensions
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "html"],
   reactStrictMode: true,
   trailingSlash: true,
+  
+  // Static export configuration
   output: 'export',
   assetPrefix: '.',
   basePath: '',
+  
+  // Image optimization
   images: {
     unoptimized: true,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.simpleicons.org',
+      },
     ],
+    domains: ['cdn.simpleicons.org'],
   },
+  
+  // Compiler options
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+  
+  // Webpack configuration
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
@@ -38,27 +60,6 @@ const nextConfig = {
       };
     }
 
-    return config;
-  },
-};
-
-module.exports = nextConfig;
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.simpleicons.org',
-      },
-    ],
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: ['cdn.simpleicons.org'], // Keep for backward compatibility
-  },
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
-  },
-  webpack(config) {
     // Find the existing file loader rule
     const fileLoaderRule = config.module.rules.find(
       (rule) => rule.test && rule.test.test && rule.test.test('.svg')
@@ -69,7 +70,7 @@ module.exports = nextConfig;
       fileLoaderRule.exclude = /\.svg$/i;
     }
 
-    // Add SVGR loader for SVG files
+    // Add SVGR loader for SVG files in JSX/TSX
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
@@ -95,8 +96,6 @@ module.exports = nextConfig;
   },
 };
 
-// const nextConfig = {
-//   reactStrictMode: true,
-// }
+module.exports = nextConfig;
 
 // module.exports = nextConfig
