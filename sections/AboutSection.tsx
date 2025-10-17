@@ -9,7 +9,7 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import tejaMallam from "../public/tejamallam-illustration.webp";
+import tejaMallam from "../public/satnaing-illustration.webp";
 import AboutBgSvg from "@/components/AboutBgSvg";
 import EduGroup from "@/components/EduGroup";
 
@@ -139,7 +139,7 @@ const AboutSection: React.FC = () => {
                     width={1700}
                     height={1790}
                     priority
-                    alt="Sat Naing profile picture"
+                    alt="Teja Mallam profile picture"
                     className="rounded-md"
                   />
                 </div>

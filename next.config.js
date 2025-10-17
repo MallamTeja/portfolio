@@ -10,6 +10,14 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/favicon.ico",
+        destination: "/favicons/favicon.ico",
+      },
+    ];
+  },
   
   // File extensions
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "html"],

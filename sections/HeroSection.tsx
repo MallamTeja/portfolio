@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import LinkButton from "../components/LinkButton";
 
-import tejaMallam from "../public/tejamallam-illustration.webp";
+import tejaMallam from "../public/satnaing-illustration.webp";
 import laptop from "../public/laptop-illustration.webp";
 
 const HeroSection: React.FC = () => {
