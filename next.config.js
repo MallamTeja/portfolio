@@ -37,7 +37,12 @@ const nextConfig = {
     domains: [
       'raw.githubusercontent.com',
       'github.com',
-      'cdn.simpleicons.org'
+      'cdn.simpleicons.org',
+      'upload.wikimedia.org',
+      'cdn-icons-png.flaticon.com',
+      'cdn.worldvectorlogo.com',
+      'seaborn.pydata.org',
+      'pytorch.org'
     ],
     remotePatterns: [
       {
@@ -53,6 +58,31 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.simpleicons.org',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn-icons-png.flaticon.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.worldvectorlogo.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'seaborn.pydata.org',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'pytorch.org',
         pathname: '/**'
       }
     ]
