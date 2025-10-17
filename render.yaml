@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: portfolio
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.18.0
+    plan: free
+    region: oregon
+    healthCheckPath: /
+    autoDeploy: true
