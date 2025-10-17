@@ -7,26 +7,34 @@ import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 import { useSection } from "context/section";
 
-type Skill = { 
-  name: string; 
-  icon?: { 
-    slug?: string; 
+type Skill = {
+  name: string;
+  icon?: {
+    slug?: string;
     svg?: string;
-    color?: string 
-  } 
+    color?: string
+  }
 };
 
 const skillsData: { category: string; skills: Skill[] }[] = [
   {
-    category: "Programming Languages & Frameworks",
+    category: "Frontend",
     skills: [
-      { name: "Python" },
+      { name: "HTML5", icon: { slug: "html5" } },
+      { name: "CSS3", icon: { slug: "css3" } },
+      { name: "Tailwind CSS", icon: { slug: "tailwindcss" } },
+      { name: "JavaScript", icon: { slug: "javascript" } },
+      { name: "TypeScript", icon: { slug: "typescript" } },
+      { name: "React", icon: { slug: "react" } },
+
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Python", icon: { slug: "python" } },
       { name: "Java" },
-      { name: "JavaScript" },
-      { name: "TypeScript" },
-      { name: "React" },
-      { name: "Redux" },
-      { name: "Node.js" },
+      { name: "Node.js", icon: { slug: "nodedotjs" } },
     ],
   },
   {
@@ -35,15 +43,7 @@ const skillsData: { category: string; skills: Skill[] }[] = [
       { name: "MongoDB" },
       { name: "MySQL" },
       { name: "SQL" },
-      { name: "GraphQL" },
-    ],
-  },
-  {
-    category: "Web Technologies",
-    skills: [
-      { name: "HTML5" },
-      { name: "CSS3" },
-      { name: "Tailwind CSS" },
+
     ],
   },
   {
@@ -56,7 +56,7 @@ const skillsData: { category: string; skills: Skill[] }[] = [
     ],
   },
   {
-    category: "Data Science & Visualization",
+    category: "Data Science & Machine Learning",
     skills: [
       { name: "NumPy" },
       { name: "pandas" },
@@ -119,9 +119,9 @@ const SkillsSection: React.FC = () => {
                 {category.skills.map((skill) => (
                   <li key={skill.name} className="skill-badge">
                     {skill.icon?.svg ? (
-                      <span 
-                        className="skill-badge__img" 
-                        dangerouslySetInnerHTML={{ __html: skill.icon.svg }} 
+                      <span
+                        className="skill-badge__img"
+                        dangerouslySetInnerHTML={{ __html: skill.icon.svg }}
                       />
                     ) : skill.icon?.slug ? (
                       <span className="skill-badge__img">
