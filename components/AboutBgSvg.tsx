@@ -1,10 +1,21 @@
+import React, { useEffect } from 'react';
 import Image from "next/image";
 
 import dots from "../public/extra/dots.svg";
 import dotsDark from "../public/extra/dots-dark.svg";
 import arrow from "../public/extra/arrow.svg";
 
+// Debugging image imports
+console.log('Dots SVG:', dots);
+console.log('Dots Dark SVG:', dotsDark);
+console.log('Arrow SVG:', arrow);
+
 const AboutBgSvg: React.FC = () => {
+  // Debugging in component render
+  useEffect(() => {
+    console.log('Component mounted - checking images:', { dots, dotsDark, arrow });
+  }, []);
+
   return (
     <>
       <span

@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
   content: [
@@ -6,6 +7,8 @@ module.exports = {
     "./sections/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    // lineClamp is now included by default in Tailwind CSS v3.3+
+    // No need for @tailwindcss/line-clamp plugin
     screens: {
       xs: "480px",
       sm: "640px",

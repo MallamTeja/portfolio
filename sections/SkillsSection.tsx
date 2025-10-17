@@ -7,45 +7,52 @@ import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 import { useSection } from "context/section";
 
-type Skill = { name: string; iconPath?: string; icon?: { slug: string; color?: string } };
+type Skill = { 
+  name: string; 
+  icon?: { 
+    slug?: string; 
+    svg?: string;
+    color?: string 
+  } 
+};
 
 const skillsData: { category: string; skills: Skill[] }[] = [
   {
     category: "Programming Languages & Frameworks",
     skills: [
-      { name: "Python", icon: { slug: "python" } },
+      { name: "Python" },
       { name: "Java" },
-      { name: "JavaScript", icon: { slug: "javascript" } },
-      { name: "TypeScript", icon: { slug: "typescript" } },
-      { name: "React", icon: { slug: "react" } },
-      { name: "Redux", icon: { slug: "redux" } },
-      { name: "Node.js", icon: { slug: "nodedotjs" } },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "React" },
+      { name: "Redux" },
+      { name: "Node.js" },
     ],
   },
   {
     category: "Databases",
     skills: [
-      { name: "MongoDB", icon: { slug: "mongodb" } },
-      { name: "MySQL", icon: { slug: "mysql" } },
+      { name: "MongoDB" },
+      { name: "MySQL" },
       { name: "SQL" },
-      { name: "GraphQL", icon: { slug: "graphql" } },
+      { name: "GraphQL" },
     ],
   },
   {
     category: "Web Technologies",
     skills: [
-      { name: "HTML5", icon: { slug: "html5" } },
-      { name: "CSS3", icon: { slug: "css3" } },
-      { name: "Tailwind CSS", icon: { slug: "tailwindcss" } },
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "Tailwind CSS" },
     ],
   },
   {
     category: "Development Tools & Platforms",
     skills: [
-      { name: "Git", icon: { slug: "git" } },
+      { name: "Git" },
       { name: "GitHub" },
-      { name: "Figma", icon: { slug: "figma" } },
-      { name: "Docker", icon: { slug: "docker" } },
+      { name: "Figma" },
+      { name: "Docker" },
     ],
   },
   {
@@ -111,7 +118,12 @@ const SkillsSection: React.FC = () => {
               <ul className="flex flex-wrap justify-center gap-4">
                 {category.skills.map((skill) => (
                   <li key={skill.name} className="skill-badge">
-                    {skill.icon ? (
+                    {skill.icon?.svg ? (
+                      <span 
+                        className="skill-badge__img" 
+                        dangerouslySetInnerHTML={{ __html: skill.icon.svg }} 
+                      />
+                    ) : skill.icon?.slug ? (
                       <span className="skill-badge__img">
                         <Image
                           src={`https://cdn.simpleicons.org/${skill.icon.slug}`}
@@ -119,16 +131,7 @@ const SkillsSection: React.FC = () => {
                           width={36}
                           height={36}
                           className="skill-badge__image"
-                        />
-                      </span>
-                    ) : skill.iconPath ? (
-                      <span className="skill-badge__img">
-                        <Image
-                          src={skill.iconPath}
-                          alt={skill.name}
-                          width={36}
-                          height={36}
-                          className="skill-badge__image"
+                          unoptimized={true}
                         />
                       </span>
                     ) : (
