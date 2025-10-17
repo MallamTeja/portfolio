@@ -62,15 +62,9 @@ function LowPolySphere({ textureUrl, size = 1, hoverScale = 1.1 }: { textureUrl:
 }
 
 export default function ThreeTechBall({ imageUrl, size = 0.9, hoverScale = 1.1, enableOrbit = false }: ThreeTechBallProps) {
-  // deep navy background
-  const background = "#0a0f1f";
-
   return (
     <div style={{ width: 84, height: 84 }}>
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 3], fov: 45 }}>
-        {/* background color */}
-        {/* @ts-expect-error drei v9 color primitive attach typing */}
-        <color attach="background" args={[background]} />
+      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 3], fov: 45 }} gl={{ alpha: true }}>
 
         {/* lighting for dynamic shading */}
         <ambientLight intensity={0.35} />

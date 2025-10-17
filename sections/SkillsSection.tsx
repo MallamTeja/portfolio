@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
 import { RoughNotation } from "react-rough-notation";
 
@@ -85,8 +84,8 @@ const SkillsSection: React.FC = () => {
     skillsSection && onSectionChange!("skills");
   }, [skillsSection]);
 
-  // map skill names to provided image texture URLs (converted to raw GitHub URLs)
-  const textureMap: Record<string, string> = {
+  // map skill names to provided image URLs (raw GitHub for direct file access)
+  const iconUrlMap: Record<string, string> = {
     "HTML5": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/html.png",
     "CSS3": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/css.png",
     "JavaScript": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/javascript.png",
@@ -101,8 +100,6 @@ const SkillsSection: React.FC = () => {
     "Figma": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/figma.png",
     "Docker": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/docker.png",
   };
-
-  const ThreeTechBall = dynamic(() => import("components/ThreeTechBall"), { ssr: false });
 
   return (
     <div className="bg-bglight dark:bg-bgdark">
@@ -122,34 +119,30 @@ const SkillsSection: React.FC = () => {
         </div>
         <div className="text-center mb-8" ref={elementRef}></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" style={{ background: "#0a0f1f", borderRadius: 12, padding: 16 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {skillsData.map((category) => (
             <div
               key={category.category}
               className="bg-transparent rounded-lg p-2"
             >
-              <ul
-                className="mx-auto"
-                style={{
-                  display: "grid",
-                  gridAutoFlow: "column",
-                  gridTemplateRows: "repeat(2, minmax(0, 1fr))",
-                  columnGap: 20,
-                  rowGap: 14,
-                  justifyContent: "center",
-                }}
-              >
+              <ul className="flex flex-wrap justify-center gap-4">
                 {category.skills.map((skill) => {
-                  const tex = textureMap[skill.name];
+                  const src = iconUrlMap[skill.name] || (skill.icon?.slug ? `https://cdn.simpleicons.org/${skill.icon.slug}` : undefined);
                   return (
-                    <li key={skill.name} style={{ width: 84, height: 84, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      {tex ? (
-                        <ThreeTechBall imageUrl={tex} />
-                      ) : skill.icon?.slug ? (
-                        // render as blank spacer to avoid labels; preserves order
-                        <div style={{ width: 84, height: 84 }} />
+                    <li key={skill.name} className="skill-badge">
+                      {src ? (
+                        <span className="skill-badge__img">
+                          <Image
+                            src={src}
+                            alt={skill.name}
+                            width={48}
+                            height={48}
+                            className="rounded-full bg-white p-1"
+                            unoptimized={true}
+                          />
+                        </span>
                       ) : (
-                        <div style={{ width: 84, height: 84 }} />
+                        <span className="skill-badge__placeholder">{skill.name}</span>
                       )}
                     </li>
                   );
