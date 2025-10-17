@@ -59,7 +59,7 @@ const skillsData: { category: string; skills: Skill[] }[] = [
       { name: "TensorFlow" },
       { name: "Power BI" },
       { name: "Tableau" },
-    ],
+    ],     
   },
 ];
 
