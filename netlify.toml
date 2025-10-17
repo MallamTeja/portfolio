@@ -1,18 +1,16 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_VERSION = "18.18.0"
-  NPM_FLAGS = "--version"
-  NEXT_USE_NETLIFY_EDGE = "true"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Note: Using Next.js static export (output: 'export').
+# Do not use the Next.js Netlify plugin; it is for SSR.
 
 [dev]
   command = "npm run dev"
   port = 3000
-  publish = ".next"
+  publish = "out"
   targetPort = 3000
