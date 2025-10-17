@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const nextConfig = {
   async redirects() {
     return [
       {
@@ -14,10 +14,35 @@ module.exports = {
   // Append the default value with md extensions
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "html"],
   reactStrictMode: true,
-  trailingSlash: false,
+  trailingSlash: true,
+  output: 'export',
+  assetPrefix: '.',
+  basePath: '',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
+  webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+      };
+    }
+
+    return config;
+  },
+};
+
+module.exports = nextConfig;
         protocol: 'https',
         hostname: 'res.cloudinary.com',
       },
