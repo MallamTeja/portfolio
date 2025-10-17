@@ -161,8 +161,11 @@ const SkillsSection: React.FC = () => {
           {skillsData.map((category) => (
             <div
               key={category.category}
-              className="bg-transparent rounded-lg p-2"
+              className="bg-cardlight dark:bg-carddark rounded-lg p-6 shadow-lg"
             >
+              <h3 className="text-lg font-semibold text-center text-marrsdark dark:text-carrigreen mb-4">
+                {category.category}
+              </h3>
               <ul className="flex flex-wrap justify-center gap-4">
                 {category.skills.map((skill) => {
                   const override = iconUrlOverrides[skill.name];
