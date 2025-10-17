@@ -11,14 +11,22 @@ type Skill = { name: string; iconPath?: string; icon?: { slug: string; color?: s
 
 const skillsData: { category: string; skills: Skill[] }[] = [
   {
-    category: "Programming Languages & Frameworks",
+    category: "Frontend",
     skills: [
-      { name: "Python", icon: { slug: "python" } },
-      { name: "Java" },
+      { name: "HTML5", icon: { slug: "html5" } },
+      { name: "CSS3", icon: { slug: "css3" } },
+      { name: "Tailwind CSS", icon: { slug: "tailwindcss" } },
       { name: "JavaScript", icon: { slug: "javascript" } },
       { name: "TypeScript", icon: { slug: "typescript" } },
       { name: "React", icon: { slug: "react" } },
-      { name: "Redux", icon: { slug: "redux" } },
+     
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Python", icon: { slug: "python" } },
+      { name: "Java" },
       { name: "Node.js", icon: { slug: "nodedotjs" } },
     ],
   },
@@ -28,15 +36,7 @@ const skillsData: { category: string; skills: Skill[] }[] = [
       { name: "MongoDB", icon: { slug: "mongodb" } },
       { name: "MySQL", icon: { slug: "mysql" } },
       { name: "SQL" },
-      { name: "GraphQL", icon: { slug: "graphql" } },
-    ],
-  },
-  {
-    category: "Web Technologies",
-    skills: [
-      { name: "HTML5", icon: { slug: "html5" } },
-      { name: "CSS3", icon: { slug: "css3" } },
-      { name: "Tailwind CSS", icon: { slug: "tailwindcss" } },
+     
     ],
   },
   {
@@ -49,7 +49,7 @@ const skillsData: { category: string; skills: Skill[] }[] = [
     ],
   },
   {
-    category: "Data Science & Visualization",
+    category: "Data Science & Machine Learning",
     skills: [
       { name: "NumPy" },
       { name: "pandas" },
