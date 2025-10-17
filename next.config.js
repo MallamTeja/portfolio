@@ -25,27 +25,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.simpleicons.org',
-      },
-    ],
-    domains: ['cdn.simpleicons.org'],
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   },
   
   // Compiler options
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV === "production"
   },
   
   // Webpack configuration
@@ -56,18 +41,8 @@ const nextConfig = {
         ...config.resolve.fallback,
         fs: false,
         path: false,
-        os: false,
+        os: false
       };
-    }
-
-    // Find the existing file loader rule
-    const fileLoaderRule = config.module.rules.find(
-      (rule) => rule.test && rule.test.test && rule.test.test('.svg')
-    );
-
-    // Exclude SVG from the default file loader
-    if (fileLoaderRule) {
-      fileLoaderRule.exclude = /\.svg$/i;
     }
 
     // Add SVGR loader for SVG files in JSX/TSX
@@ -79,23 +54,14 @@ const nextConfig = {
           loader: '@svgr/webpack',
           options: {
             svgo: false,
-            titleProp: true,
-          },
-        },
-      ],
-    });
-
-    // Handle SVG in CSS/SCSS files
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.(css|scss)$/,
-      use: ['@svgr/webpack', 'url-loader'],
+            titleProp: true
+          }
+        }
+      ]
     });
 
     return config;
-  },
+  }
 };
 
 module.exports = nextConfig;
-
-// module.exports = nextConfig
