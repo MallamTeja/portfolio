@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
 import { RoughNotation } from "react-rough-notation";
 
@@ -84,6 +85,25 @@ const SkillsSection: React.FC = () => {
     skillsSection && onSectionChange!("skills");
   }, [skillsSection]);
 
+  // map skill names to provided image texture URLs (converted to raw GitHub URLs)
+  const textureMap: Record<string, string> = {
+    "HTML5": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/html.png",
+    "CSS3": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/css.png",
+    "JavaScript": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/javascript.png",
+    "TypeScript": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/typescript.png",
+    "React": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/reactjs.png",
+    "Redux": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/redux.png",
+    "Tailwind CSS": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/tailwind.png",
+    "Node.js": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/nodejs.png",
+    "MongoDB": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/mongodb.png",
+    "Three.js": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/threejs.svg",
+    "Git": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/git.png",
+    "Figma": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/figma.png",
+    "Docker": "https://raw.githubusercontent.com/sanidhyy/3d-portfolio/refs/heads/main/src/assets/tech/docker.png",
+  };
+
+  const ThreeTechBall = dynamic(() => import("components/ThreeTechBall"), { ssr: false });
+
   return (
     <div className="bg-bglight dark:bg-bgdark">
       <section ref={sectionRef} id="skills" className="section md:px-10">
@@ -100,45 +120,40 @@ const SkillsSection: React.FC = () => {
             <h2 className="section-heading">Skills</h2>
           </RoughNotation>
         </div>
-        <div className="text-center mb-8" ref={elementRef}>
-          Here are the technologies and tools I work with
-          <br className="hidden sm:block" aria-hidden="true" />
-          rendered as polygon badges like the 3D portfolio icons.
-        </div>
+        <div className="text-center mb-8" ref={elementRef}></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" style={{ background: "#0a0f1f", borderRadius: 12, padding: 16 }}>
           {skillsData.map((category) => (
             <div
               key={category.category}
-              className="bg-cardlight dark:bg-carddark rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-transparent rounded-lg p-2"
             >
-              <h3 className="text-xl font-semibold text-marrsdark dark:text-carrigreen mb-5 text-center">
-                {category.category}
-              </h3>
-              <ul className="flex flex-wrap justify-center gap-4">
-                {category.skills.map((skill) => (
-                  <li key={skill.name} className="skill-badge">
-                    {skill.icon?.svg ? (
-                      <span
-                        className="skill-badge__img"
-                        dangerouslySetInnerHTML={{ __html: skill.icon.svg }}
-                      />
-                    ) : skill.icon?.slug ? (
-                      <span className="skill-badge__img">
-                        <Image
-                          src={`https://cdn.simpleicons.org/${skill.icon.slug}`}
-                          alt={skill.name}
-                          width={36}
-                          height={36}
-                          className="skill-badge__image"
-                          unoptimized={true}
-                        />
-                      </span>
-                    ) : (
-                      <span className="skill-badge__placeholder">{skill.name}</span>
-                    )}
-                  </li>
-                ))}
+              <ul
+                className="mx-auto"
+                style={{
+                  display: "grid",
+                  gridAutoFlow: "column",
+                  gridTemplateRows: "repeat(2, minmax(0, 1fr))",
+                  columnGap: 20,
+                  rowGap: 14,
+                  justifyContent: "center",
+                }}
+              >
+                {category.skills.map((skill) => {
+                  const tex = textureMap[skill.name];
+                  return (
+                    <li key={skill.name} style={{ width: 84, height: 84, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      {tex ? (
+                        <ThreeTechBall imageUrl={tex} />
+                      ) : skill.icon?.slug ? (
+                        // render as blank spacer to avoid labels; preserves order
+                        <div style={{ width: 84, height: 84 }} />
+                      ) : (
+                        <div style={{ width: 84, height: 84 }} />
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
