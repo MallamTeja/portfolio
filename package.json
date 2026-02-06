@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-"build": "next build",    "start": "npx serve -s out",
+   "build": "next build",   
+    "start": "npx serve -s out",
     "lint": "next lint",
     "format:check": "prettier --check .",
     "format": "prettier --write ."
