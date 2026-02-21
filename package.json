@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+   "build": "next build",   
     "start": "npx serve -s out",
     "lint": "next lint",
     "format:check": "prettier --check .",
@@ -15,7 +15,7 @@
     "gsap": "^3.11.4",
     "@react-three/drei": "^9.103.2",
     "@react-three/fiber": "^8.17.10",
-    "next": "^15.4.5",
+    "next": "^15.4.10",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
