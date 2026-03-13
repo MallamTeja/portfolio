@@ -4,17 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-   "build": "next build",   
+    "build": "next build",
     "start": "npx serve -s out",
     "lint": "next lint",
     "format:check": "prettier --check .",
     "format": "prettier --write ."
   },
   "dependencies": {
-    "gray-matter": "^4.0.3",
-    "gsap": "^3.11.4",
     "@react-three/drei": "^9.103.2",
     "@react-three/fiber": "^8.17.10",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.11.4",
     "next": "^15.4.10",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
@@ -23,8 +23,8 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "simple-icons": "^11.15.0",
-    "three": "^0.164.1",
-    "swiper": "^8.4.5"
+    "swiper": "^12.1.2",
+    "three": "^0.164.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

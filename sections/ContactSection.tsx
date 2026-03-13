@@ -45,16 +45,28 @@ const ContactSection: React.FC = () => {
           Let's be awesome together!
         </h3>
         <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
-          I'm a passionate Computer Science student with expertise in web development and data analysis.
           If you're interested in collaborating on projects, discussing opportunities, or just want to say hi,
           feel free to reach out to me through any of these channels:
         </p>
         <div className="space-y-4 mb-8">
-          <p className="text-lg">📧 Email: tejamallam.work@gmail.com</p>
-          <p className="text-lg">📱 Phone: +91 6303 96 5866</p>
+          <p className="text-lg">
+            📧 Email:{" "}
+            <a
+              href="mailto:tejamallam1233@gmail.com"
+              className="hover:underline"
+            >
+              tejamallam1233@gmail.com
+            </a>
+          </p>
+          <p className="text-lg">
+            📱 Phone:{" "}
+            <a href="tel:+919392256662" className="hover:underline">
+              +91 9392256662
+            </a>
+          </p>
           <p className="text-lg">🌐 Location: Hyderabad, India</p>
         </div>
-        <LinkButton href="mailto:tejamallam.work@gmail.com">
+        <LinkButton href="mailto:tejamallam1233@gmail.com">
           Send me an email
         </LinkButton>
       </div>

@@ -53,6 +53,8 @@ const skillsData: { category: string; skills: Skill[] }[] = [
       { name: "GitHub" },
       { name: "Figma" },
       { name: "Docker" },
+      { name: "Postman" },
+      { name: "GitHub Actions" },
     ],
   },
   {
@@ -62,10 +64,11 @@ const skillsData: { category: string; skills: Skill[] }[] = [
       { name: "pandas" },
       { name: "Matplotlib" },
       { name: "Seaborn" },
-      { name: "PyTorch" },
+      { name: "Scikitlearn" },
       { name: "TensorFlow" },
       { name: "Power BI" },
       { name: "Tableau" },
+      { name: "FastAPI" },
     ],
   },
 ];
@@ -108,10 +111,13 @@ const SkillsSection: React.FC = () => {
     "pandas": "pandas",
     "Matplotlib": "matplotlib",
     "Seaborn": "seaborn",
-    "PyTorch": "pytorch",
+    "Scikitlearn": "Scikitlearn",
     "TensorFlow": "tensorflow",
     "Power BI": "powerbi",
     "Tableau": "tableau",
+    "Postman": "postman",
+    "FastAPI": "fastapi",
+    "GitHub Actions": "githubactions",
   };
 
   // exact icon URLs from your markdown snippet
@@ -123,7 +129,8 @@ const SkillsSection: React.FC = () => {
     "CSS3": "https://cdn-icons-png.flaticon.com/512/732/732190.png",
     "Tailwind CSS": "https://cdn.worldvectorlogo.com/logos/tailwindcss.svg",
     "Git": "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
-    "TypeScript": "https://cdn-icons-png.flaticon.com/512/919/919853.png",
+    "TypeScript": "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+    "Docker": "https://cdn-icons-png.flaticon.com/512/919/919853.png",
     "GitHub": "https://cdn-icons-png.flaticon.com/512/733/733553.png",
     "MongoDB": "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
     "MySQL": "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
@@ -132,11 +139,14 @@ const SkillsSection: React.FC = () => {
     "pandas": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg",
     "Matplotlib": "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg",
     "Seaborn": "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg",
-    "PyTorch": "https://pytorch.org/assets/images/pytorch-logo.png",
+    "Scikitlearn": "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
     "TensorFlow": "https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg",
     "Power BI": "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
     "Tableau": "https://cdn.worldvectorlogo.com/logos/tableau-software.svg",
     "Figma": "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
+    "Postman": "https://cdn.worldvectorlogo.com/logos/postman.svg",
+    "FastAPI": "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg",
+    "GitHub Actions": "https://cdn.simpleicons.org/githubactions",
   };
 
   return (
@@ -145,9 +155,8 @@ const SkillsSection: React.FC = () => {
         <div className="text-center">
           <RoughNotation
             type="underline"
-            color={`${
-              theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
-            }`}
+            color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
+              }`}
             strokeWidth={2}
             order={1}
             show={isOnScreen}

@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         ref={cursorRef}
         className="hidden lg:block w-12 h-12 opacity-0 pointer-events-none rounded-full border-2 border-marrsgreen dark:border-carrigreen z-[9999] fixed -translate-x-1/2 -translate-y-1/2"
       />
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         <ProvideFilter>
           <ProvideSection>
             <Component {...pageProps} />

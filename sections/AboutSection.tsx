@@ -9,7 +9,7 @@ import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
 
-import tejaMallam from "../public/satnaing-illustration.webp";
+import tejaMallam from "../public/illustration.webp";
 import AboutBgSvg from "@/components/AboutBgSvg";
 import EduGroup from "@/components/EduGroup";
 
@@ -109,9 +109,8 @@ const AboutSection: React.FC = () => {
           <div className="text-center">
             <RoughNotation
               type="underline"
-              color={`${
-                theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
-              }`}
+              color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
+                }`}
               strokeWidth={2}
               order={1}
               show={isSecOnScreen}
@@ -169,9 +168,9 @@ const AboutSection: React.FC = () => {
             </div>
 
             <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-            I'm Teja Mallam, a highly driven Computer Science undergraduate from MLR Institute of Technology. With a deep passion for web development and data analysis, I am committed to building scalable software and solving real-world problems using data.
+              I'm Teja Mallam, a highly driven Computer Science undergraduate from MLR Institute of Technology. I am committed to building scalable software and solving real-world problems using data.
 
-I actively explore the intersection of full-stack tech and analytical thinking to create modern, user-focused digital solutions.
+              I actively use platforms like LinkedIn, X and GitHub for personal branding and professional growth.
             </p>
 
             <div
@@ -194,29 +193,33 @@ I actively explore the intersection of full-stack tech and analytical thinking t
 
 const educationInfo = [
   {
-    id: 1,
-    title: "Data Science",
-    subTitle: "MLR Institute of Technology | 2024 ~ 2025",
-    list: [
-      "Studied computer science, Data Science",
-      "Got merit in 8 modules out of 10",
-    ],
+    "id": 1,
+    "title": "Data Science",
+    "subTitle": "MLR Institute of Technology | 2024 - 2025",
+    "list": [
+      "I have learnt full-stack development and data analytics and built projects in both areas, while also studying modern AI concepts and tools to stay ahead in this AI-driven era.",
+      "I have participated in multiple hackathons, workshops, bootcamps, and networking events to gain practical experience, stay updated with industry trends, and connect with like-minded professionals."
+    ]
   },
   {
-    id: 2,
-    title: "ECE",
-    subTitle: "TKR institute of technology | 2021 ~ 2024",
-    list: [
-      "Studied Electrical and Communication Engineering",
-      "Got merit in 7 modules out of 10",
-    ],
+    "id": 2,
+    "title": "ECE",
+    "subTitle": "TKR Institute of Technology | 2021 - 2024",
+    "list": [
+      "Studied Electrical and Communication Engineering.",
+      "Built multiple IoT systems using ESP32, ESP32-S, ESP8266, ESP32-CAM, and Arduino boards (Uno, Pro Mini, Nano) programmed in Arduino IDE.",
+      "Implemented Bluetooth, WiFi, and server-based control with sensor integration so devices can be operated from anywhere via web and mobile interfaces."
+    ]
   },
   {
-    id: 3,
-    title: "State Syllabus",
-    subTitle: "Govt High School | 2017 ~ 2021",
-    list: ["Got merit in 10 modules out of 10"],
-  },
+    "id": 3,
+    "title": "State Syllabus",
+    "subTitle": "Govt High School | 2017 - 2021",
+    "list": [
+      "Participated in multiple science fairs, presenting working prototypes and experiments.",
+      "Played five different sports, strengthening teamwork, discipline, and persistence."
+    ]
+  }
 ];
 
 export default AboutSection;

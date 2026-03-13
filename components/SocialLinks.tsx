@@ -13,11 +13,10 @@ const SocialLinks: FC<{ page?: string }> = ({ page }) => {
                 title={nav.text}
                 href={nav.url}
                 key={nav.url}
-                className={`transition-all outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${
-                  currentSection === nav.text.toLowerCase()
-                    ? "bg-marrsgreen dark:bg-carrigreen rotate-0"
-                    : "opacity-50 focus-visible:opacity-100 hover:opacity-80 rotate-45 hover:rotate-12"
-                } w-3 h-3 border-2 border-marrsgreen dark:border-carrigreen`}
+                className={`transition-all outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${currentSection === nav.text.toLowerCase()
+                  ? "bg-marrsgreen dark:bg-carrigreen rotate-0"
+                  : "opacity-50 focus-visible:opacity-100 hover:opacity-80 rotate-45 hover:rotate-12"
+                  } w-3 h-3 border-2 border-marrsgreen dark:border-carrigreen`}
               ></a>
             );
           })}
@@ -57,8 +56,8 @@ const SocialLinks: FC<{ page?: string }> = ({ page }) => {
 const socialLinks = [
   {
     id: 1,
-    title: "Teja Mallam's Github Profile",
-    link: "https://github.com/tejamallam",
+    title: "My Github Profile",
+    link: "https://github.com/MallamTeja",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +75,8 @@ const socialLinks = [
   },
   {
     id: 2,
-    title: "Teja Mallam's LinkedIn Profile",
-    link: "https://www.linkedin.com/in/teja-mallam-9b6b4b1b2/",
+    title: "My LinkedIn Profile",
+    link: "https://www.linkedin.com/in/tejamallam",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -92,19 +91,21 @@ const socialLinks = [
   },
   {
     id: 4,
-    title: "Teja Mallam's Twitter Profile",
-    link: "https://twitter.com/TejaMallam",
+    title: "My X Profile",
+    link: "https://x.com/Mallam_Teja",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
+        viewBox="0 0 24 24"
         className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
       >
-        <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z" />
+        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z" />
       </svg>
     ),
   },
+
 ];
 
 const navLinks = [
