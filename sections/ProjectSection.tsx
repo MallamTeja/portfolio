@@ -61,44 +61,66 @@ const ProjectSection: React.FC = () => {
 
 const projects = [
   {
+    title: "F1 race pace Predictor",
+    type: "Machine Learning, Deep Learning",
+    desc: (
+      <>
+        Predicts the race pace of FormulaOne drivers using machine learning. live on {" "}
+        <a
+          href="https://tejamallam.me"
+          target="_blank"
+          rel="noreferrer"
+          style={{ fontFamily: "'Times New Roman', Times, serif" }}
+          className="text-lg text-marrsgreen dark:text-carrigreen"
+        >
+          tejamallam.me
+        </a>
+      </>
+    ),
+    tags: ["Python", "Scikit-learn", "FastAPI", "CICD", "Docker", "FFNs", "GBR", "XGBoost", "Numpy", "Pandas", "Matplotlib", "DNS", "Git Actions"],
+    liveUrl: "https://f1predictor.tech",
+    codeUrl: "https://github.com/MallamTeja/f1_models",
+    githubApi: "https://api.github.com/repos/MallamTeja/f1_models",
+  },
+  {
     title: "Domain-Specific Small Language Model (SLM)",
     type: "Deep Learning, RAG, Neural Networks",
     desc:
       "Fine-tuned a transformer model with X billion parameters using self-supervised learning, QLoRA, and PEFT. Added a dense RAG pipeline to increase accuracy and reduce hallucinations and latency.",
-    tags: ["PyTorch", "TensorFlow", "Python"],
+    tags: ["Python", "PyTorch", "TensorFlow", "Deeplearning", "Keras", "Numpy", "Pandas", "FFN", "MLP", "VectorDB", "RAG", "FastAPI", "UviCorn", "FFNs", "MLPs"],
     liveUrl: "https://slm.tech",
-    codeUrl: "https://github.com/MallamTeja",
-    githubApi: "https://api.github.com/users/MallamTeja",
+    codeUrl: "https://github.com/MallamTeja/slm",
+    githubApi: "https://api.github.com/repos/MallamTeja/slm",
   },
   {
-    title: "Skill Exchange Full-Stack Project",
+    title: "Skill Exchange",
     type: "Full-Stack",
     desc:
       "Full-stack web app to exchange skills via 1-on-1 sessions, resource finder, network connections, and WebSockets for live chatting, etc.",
     tags: [
-      "MERN Full-Stack",
-      "Gemini, Serper, DeepSeek APIs Integration",
+      "MERN Stack",
+      "Gemini, Serper, DeepSeek APIs Integrations",
       "Figma",
       "CI/CD Pipeline",
     ],
     liveUrl: "https://skillexchange.tech",
-    codeUrl: "https://github.com/MallamTeja/",
-    githubApi: "https://api.github.com/users/MallamTeja",
+    codeUrl: "https://github.com/MallamTeja/1on1",
+    githubApi: "https://api.github.com/repos/MallamTeja/1on1",
   },
   {
-    title: "FinTrack Personal Finance Tracker",
+    title: "FinTrack (Personal Finance Tracker)",
     type: "Full-Stack",
     desc:
       "Full-stack web app to track personal finance, income, expenses, and savings. Integrated with MongoDB, Express, React, Node.js, WebSocket, and more.",
     tags: [
       "MERN Full-Stack",
-      "Gemini, Serper, DeepSeek APIs Integration",
+      "Websockets", "Charts.js", "JWT Authentication", "OCR",
       "Figma",
       "CI/CD Pipeline",
     ],
     liveUrl: "https://fintrack.vercel",
-    codeUrl: "https://github.com/MallamTeja/",
-    githubApi: "https://api.github.com/users/MallamTeja",
+    codeUrl: "https://github.com/MallamTeja/FinTrack",
+    githubApi: "https://api.github.com/repos/MallamTeja/FinTrack",
   },
 ];
 

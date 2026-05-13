@@ -12,8 +12,8 @@ type Skill = {
   icon?: {
     slug?: string;
     svg?: string;
-    color?: string
-  }
+    color?: string;
+  };
 };
 
 const skillsData: { category: string; skills: Skill[] }[] = [
@@ -26,7 +26,6 @@ const skillsData: { category: string; skills: Skill[] }[] = [
       { name: "JavaScript", icon: { slug: "javascript" } },
       { name: "TypeScript", icon: { slug: "typescript" } },
       { name: "React", icon: { slug: "react" } },
-
     ],
   },
   {
@@ -39,12 +38,7 @@ const skillsData: { category: string; skills: Skill[] }[] = [
   },
   {
     category: "Databases",
-    skills: [
-      { name: "MongoDB" },
-      { name: "MySQL" },
-      { name: "SQL" },
-
-    ],
+    skills: [{ name: "MongoDB" }, { name: "MySQL" }, { name: "SQL" }],
   },
   {
     category: "Development Tools & Platforms",
@@ -89,63 +83,69 @@ const SkillsSection: React.FC = () => {
 
   // map display names to official Simple Icons slugs for brand-correct SVGs
   const iconSlugMap: Record<string, string> = {
-    "HTML5": "html5",
-    "CSS3": "css3",
-    "JavaScript": "javascript",
-    "TypeScript": "typescript",
-    "React": "react",
-    "Redux": "redux",
+    HTML5: "html5",
+    CSS3: "css3",
+    JavaScript: "javascript",
+    TypeScript: "typescript",
+    React: "react",
+    Redux: "redux",
     "Tailwind CSS": "tailwindcss",
     "Node.js": "nodedotjs",
-    "MongoDB": "mongodb",
+    MongoDB: "mongodb",
     "Three.js": "threedotjs",
-    "Git": "git",
-    "GitHub": "github",
-    "Figma": "figma",
-    "Docker": "docker",
-    "Python": "python",
-    "Java": "java",
-    "MySQL": "mysql",
+    Git: "git",
+    GitHub: "github",
+    Figma: "figma",
+    Docker: "docker",
+    Python: "python",
+    Java: "java",
+    MySQL: "mysql",
     // Data/ML
-    "NumPy": "numpy",
-    "pandas": "pandas",
-    "Matplotlib": "matplotlib",
-    "Seaborn": "seaborn",
-    "Scikitlearn": "Scikitlearn",
-    "TensorFlow": "tensorflow",
+    NumPy: "numpy",
+    pandas: "pandas",
+    Matplotlib: "matplotlib",
+    Seaborn: "seaborn",
+    Scikitlearn: "Scikitlearn",
+    TensorFlow: "tensorflow",
     "Power BI": "powerbi",
-    "Tableau": "tableau",
-    "Postman": "postman",
-    "FastAPI": "fastapi",
+    Tableau: "tableau",
+    Postman: "postman",
+    FastAPI: "fastapi",
     "GitHub Actions": "githubactions",
   };
 
   // exact icon URLs from your markdown snippet
   const iconUrlOverrides: Record<string, string> = {
-    "Python": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-    "Java": "https://cdn-icons-png.flaticon.com/512/226/226777.png",
-    "JavaScript": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
-    "HTML5": "https://cdn-icons-png.flaticon.com/512/732/732212.png",
-    "CSS3": "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+    Python:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+    Java: "https://cdn-icons-png.flaticon.com/512/226/226777.png",
+    JavaScript: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+    HTML5: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+    CSS3: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
     "Tailwind CSS": "https://cdn.worldvectorlogo.com/logos/tailwindcss.svg",
-    "Git": "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
-    "TypeScript": "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
-    "Docker": "https://cdn-icons-png.flaticon.com/512/919/919853.png",
-    "GitHub": "https://cdn-icons-png.flaticon.com/512/733/733553.png",
-    "MongoDB": "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
-    "MySQL": "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
-    "SQL": "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
-    "NumPy": "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg",
-    "pandas": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg",
-    "Matplotlib": "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg",
-    "Seaborn": "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg",
-    "Scikitlearn": "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
-    "TensorFlow": "https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg",
-    "Power BI": "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
-    "Tableau": "https://cdn.worldvectorlogo.com/logos/tableau-software.svg",
-    "Figma": "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
-    "Postman": "https://cdn.worldvectorlogo.com/logos/postman.svg",
-    "FastAPI": "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg",
+    Git: "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
+    TypeScript: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+    Docker: "https://cdn-icons-png.flaticon.com/512/919/919853.png",
+    GitHub: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
+    MongoDB: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+    MySQL: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
+    SQL: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
+    NumPy:
+      "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg",
+    pandas:
+      "https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg",
+    Matplotlib:
+      "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg",
+    Seaborn: "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg",
+    Scikitlearn:
+      "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
+    TensorFlow: "https://cdn.worldvectorlogo.com/logos/tensorflow-2.svg",
+    "Power BI":
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
+    Tableau: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg",
+    Figma: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
+    Postman: "https://cdn.worldvectorlogo.com/logos/postman.svg",
+    FastAPI: "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg",
     "GitHub Actions": "https://cdn.simpleicons.org/githubactions",
   };
 
@@ -155,8 +155,9 @@ const SkillsSection: React.FC = () => {
         <div className="text-center">
           <RoughNotation
             type="underline"
-            color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
-              }`}
+            color={`${
+              theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
+            }`}
             strokeWidth={2}
             order={1}
             show={isOnScreen}
@@ -179,7 +180,9 @@ const SkillsSection: React.FC = () => {
                 {category.skills.map((skill) => {
                   const override = iconUrlOverrides[skill.name];
                   const slug = iconSlugMap[skill.name] || skill.icon?.slug;
-                  const src = override || (slug ? `https://cdn.simpleicons.org/${slug}` : undefined);
+                  const src =
+                    override ||
+                    (slug ? `https://cdn.simpleicons.org/${slug}` : undefined);
                   return (
                     <li key={skill.name} className="skill-badge">
                       {src ? (
@@ -194,7 +197,9 @@ const SkillsSection: React.FC = () => {
                           />
                         </span>
                       ) : (
-                        <span className="skill-badge__placeholder">{skill.name}</span>
+                        <span className="skill-badge__placeholder">
+                          {skill.name}
+                        </span>
                       )}
                     </li>
                   );

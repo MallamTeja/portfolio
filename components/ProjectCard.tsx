@@ -7,7 +7,7 @@ type Props = {
   project: {
     title: string;
     type: string;
-    desc: string;
+    desc: string | React.ReactNode;
     tags: string[];
     liveUrl?: string;
     codeUrl: string;

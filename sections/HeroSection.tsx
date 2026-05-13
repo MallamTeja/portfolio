@@ -88,7 +88,7 @@ const HeroSection: React.FC = () => {
     >
       <span
         aria-hidden="true"
-        className="bg-text absolute -top-36 rotate-12 text-gray-100 dark:text-[#1f2e3a] text-9xl scale-150 tracking-wide font-bold select-none pointer-events-none text-center z-0"
+        className="bg-text absolute -top-36 rotate-12 text-gray-100 dark:text-[#1f2e3a] text-5xl tracking-wide font-bold select-none pointer-events-none text-center z-0"
       >
         AI ENTHUSIAST DATA ANLYIST FULL-STACK DEVELOPER
       </span>
@@ -102,7 +102,7 @@ const HeroSection: React.FC = () => {
               height={1374}
               priority
               id="character-illustration"
-              aria-label="Teja Mallam character illustration levitating with a Macbook"
+              aria-label="Teja Mallam character illustration levitating with a thinkpad"
               alt="Teja Mallam character illustration"
             />
           </div>
@@ -134,18 +134,24 @@ const HeroSection: React.FC = () => {
         </div>
         <div className="mt-2 my-4 md:mb-8">
           <p className="mb-1">
-            I enjoy learning by doing, I am passionate about transforming raw data into actionable insights. Proficient in Python, SQL and Java, I have experience with various data analysis tools, libraries, Fullstack Development and ML.
+            I enjoy learning by doing, I am passionate about transforming raw
+            data into actionable insights. Proficient in Python, SQL and Java, I
+            have experience with various data analysis tools, libraries,
+            Fullstack Development and ML.
           </p>
 
           <p>
-            I continuously update my AI skills, including prompt engineering, vibe coding, building ensemble models, FNN&apos;s, transformer nn&apos;s, MLP&apos;s, finetuning dl models, SLM&apos;s, n8n automations and other emerging new age AI tools, to stay ahead and Thrive in this AI era
+            I continuously update my AI skills, including prompt engineering,
+            vibe coding, building ensemble models, FNN&apos;s, transformer
+            nn&apos;s, MLP&apos;s, finetuning dl models, SLM&apos;s, n8n
+            automations and other emerging new age AI tools, to stay ahead and
+            Thrive in this AI era
           </p>
         </div>
         <LinkButton href={`mailto:tejamallam1233@gmail.com`}>
           Contact me!
         </LinkButton>
       </div>
-
     </section>
   );
 };

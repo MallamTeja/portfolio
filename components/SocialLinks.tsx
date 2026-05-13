@@ -13,10 +13,11 @@ const SocialLinks: FC<{ page?: string }> = ({ page }) => {
                 title={nav.text}
                 href={nav.url}
                 key={nav.url}
-                className={`transition-all outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${currentSection === nav.text.toLowerCase()
-                  ? "bg-marrsgreen dark:bg-carrigreen rotate-0"
-                  : "opacity-50 focus-visible:opacity-100 hover:opacity-80 rotate-45 hover:rotate-12"
-                  } w-3 h-3 border-2 border-marrsgreen dark:border-carrigreen`}
+                className={`transition-all outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${
+                  currentSection === nav.text.toLowerCase()
+                    ? "bg-marrsgreen dark:bg-carrigreen rotate-0"
+                    : "opacity-50 focus-visible:opacity-100 hover:opacity-80 rotate-45 hover:rotate-12"
+                } w-3 h-3 border-2 border-marrsgreen dark:border-carrigreen`}
               ></a>
             );
           })}
@@ -105,7 +106,22 @@ const socialLinks = [
       </svg>
     ),
   },
-
+  {
+    id: 5,
+    title: "Email Teja Mallam",
+    link: "mailto:tejamallam1233@gmail.com",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+      >
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+      </svg>
+    ),
+  },
 ];
 
 const navLinks = [

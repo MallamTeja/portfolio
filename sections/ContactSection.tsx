@@ -45,8 +45,9 @@ const ContactSection: React.FC = () => {
           Let's be awesome together!
         </h3>
         <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
-          If you're interested in collaborating on projects, discussing opportunities, or just want to say hi,
-          feel free to reach out to me through any of these channels:
+          If you're interested in collaborating on projects, discussing
+          opportunities, or just want to say hi, feel free to reach out to me
+          through any of these channels:
         </p>
         <div className="space-y-4 mb-8">
           <p className="text-lg">

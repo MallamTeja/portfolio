@@ -10,11 +10,22 @@ type ThreeTechBallProps = {
   enableOrbit?: boolean;
 };
 
-const Canvas = dynamic(() => import("@react-three/fiber").then(m => m.Canvas), {
-  ssr: false,
-});
+const Canvas = dynamic(
+  () => import("@react-three/fiber").then((m) => m.Canvas),
+  {
+    ssr: false,
+  }
+);
 
-function LowPolySphere({ textureUrl, size = 1, hoverScale = 1.1 }: { textureUrl: string; size?: number; hoverScale?: number }) {
+function LowPolySphere({
+  textureUrl,
+  size = 1,
+  hoverScale = 1.1,
+}: {
+  textureUrl: string;
+  size?: number;
+  hoverScale?: number;
+}) {
   const meshRef = useRef<any>(null);
   const [hovered, setHovered] = useState(false);
   const colorMap = useTexture(textureUrl);
@@ -31,7 +42,8 @@ function LowPolySphere({ textureUrl, size = 1, hoverScale = 1.1 }: { textureUrl:
   const emissiveIntensity = useMemo(() => 0.08, []);
 
   return (
-    <Float speed={1.5} // slower is gentler
+    <Float
+      speed={1.5} // slower is gentler
       rotationIntensity={0.3}
       floatIntensity={0.6}
     >
@@ -61,11 +73,20 @@ function LowPolySphere({ textureUrl, size = 1, hoverScale = 1.1 }: { textureUrl:
   );
 }
 
-export default function ThreeTechBall({ imageUrl, size = 0.9, hoverScale = 1.1, enableOrbit = false }: ThreeTechBallProps) {
+export default function ThreeTechBall({
+  imageUrl,
+  size = 0.9,
+  hoverScale = 1.1,
+  enableOrbit = false,
+}: ThreeTechBallProps) {
   return (
     <div style={{ width: 84, height: 84 }}>
-      <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 3], fov: 45 }} gl={{ alpha: true }}>
-
+      <Canvas
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, 3], fov: 45 }}
+        gl={{ alpha: true }}
+      >
         {/* lighting for dynamic shading */}
         <ambientLight intensity={0.35} />
         <directionalLight position={[4, 6, 5]} intensity={1.0} castShadow />
@@ -73,14 +94,18 @@ export default function ThreeTechBall({ imageUrl, size = 0.9, hoverScale = 1.1, 
 
         <Suspense fallback={null}>
           <group>
-            <LowPolySphere textureUrl={imageUrl} size={size} hoverScale={hoverScale} />
+            <LowPolySphere
+              textureUrl={imageUrl}
+              size={size}
+              hoverScale={hoverScale}
+            />
           </group>
         </Suspense>
 
-        {enableOrbit ? <OrbitControls enableZoom={false} enablePan={false} /> : null}
+        {enableOrbit ? (
+          <OrbitControls enableZoom={false} enablePan={false} />
+        ) : null}
       </Canvas>
     </div>
   );
 }
-
-

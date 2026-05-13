@@ -18,81 +18,81 @@ const nextConfig = {
       },
     ];
   },
-  
+
   // File extensions
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx", "html"],
   reactStrictMode: true,
   trailingSlash: true,
-  
+
   // Static export configuration
-  output: 'export',
-  assetPrefix: '.',
-  basePath: '',
-  
+  output: "export",
+  assetPrefix: ".",
+  basePath: "",
+
   // Image optimization
   images: {
     unoptimized: true,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: [
-      'raw.githubusercontent.com',
-      'github.com',
-      'cdn.simpleicons.org',
-      'upload.wikimedia.org',
-      'cdn-icons-png.flaticon.com',
-      'cdn.worldvectorlogo.com',
-      'seaborn.pydata.org',
-      'pytorch.org'
+      "raw.githubusercontent.com",
+      "github.com",
+      "cdn.simpleicons.org",
+      "upload.wikimedia.org",
+      "cdn-icons-png.flaticon.com",
+      "cdn.worldvectorlogo.com",
+      "seaborn.pydata.org",
+      "pytorch.org",
     ],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-        pathname: '/**'
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'github.com',
-        pathname: '/**'
+        protocol: "https",
+        hostname: "github.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'cdn.simpleicons.org',
-        pathname: '/**'
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'upload.wikimedia.org',
-        pathname: '/**'
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'cdn-icons-png.flaticon.com',
-        pathname: '/**'
+        protocol: "https",
+        hostname: "cdn-icons-png.flaticon.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'cdn.worldvectorlogo.com',
-        pathname: '/**'
+        protocol: "https",
+        hostname: "cdn.worldvectorlogo.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'seaborn.pydata.org',
-        pathname: '/**'
+        protocol: "https",
+        hostname: "seaborn.pydata.org",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'pytorch.org',
-        pathname: '/**'
-      }
-    ]
+        protocol: "https",
+        hostname: "pytorch.org",
+        pathname: "/**",
+      },
+    ],
   },
-  
+
   // Compiler options
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production"
+    removeConsole: process.env.NODE_ENV === "production",
   },
-  
+
   // Webpack configuration
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
@@ -101,7 +101,7 @@ const nextConfig = {
         ...config.resolve.fallback,
         fs: false,
         path: false,
-        os: false
+        os: false,
       };
     }
 
@@ -111,17 +111,17 @@ const nextConfig = {
       issuer: /\.[jt]sx?$/,
       use: [
         {
-          loader: '@svgr/webpack',
+          loader: "@svgr/webpack",
           options: {
             svgo: false,
-            titleProp: true
-          }
-        }
-      ]
+            titleProp: true,
+          },
+        },
+      ],
     });
 
     return config;
-  }
+  },
 };
 
 module.exports = nextConfig;

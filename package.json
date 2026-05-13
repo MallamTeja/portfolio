@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:nodemon": "nodemon -w next.config.js -w tailwind.config.js --exec \"next dev\"",
     "build": "next build",
     "start": "npx serve -s out",
     "lint": "next lint",
@@ -35,6 +36,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-config-next": "^15.0.0",
+    "nodemon": "^3.1.14",
     "postcss": "^8.4.47",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.4.10",

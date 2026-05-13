@@ -56,7 +56,12 @@
   /* Skills badges (polygon look, matches site colors) */
   .skill-badge {
     @apply w-20 h-20 flex items-center justify-center rounded-full relative bg-[#2b2f33] dark:bg-[#142029] shadow-md;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.6) 100%);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
   }
 
   .skill-badge::before {

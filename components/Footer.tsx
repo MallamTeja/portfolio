@@ -7,20 +7,7 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
     <footer
       className={`${noPadding ? "pb-4" : "pb-24"} md:pb-4 text-center mt-auto`}
     >
-      <div className="flex justify-center space-x-12 mb-4">
-        {socialLinks.map((social) => (
-          <a
-            key={social.id}
-            href={social.link}
-            title={social.title}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transform scale-150 md:scale-125 link-outline"
-          >
-            {social.svg}
-          </a>
-        ))}
-      </div>
+
       <div>
         Developed with <span className="sr-only">love</span>
         <svg

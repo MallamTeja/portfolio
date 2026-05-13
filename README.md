@@ -1,18 +1,17 @@
-# Teja Mallam Portfolio & Blog
+# Teja Mallam Portfolio
 
-
-My portfolio & blog website developed with Next.JS(SSG) and TypeScript. Tailwind CSS and GSAP is used for styling and animations. Blog contents are written in Markdown format. Light & Dark themes supported.
+My portfolio website developed with Next.JS(SSG) and TypeScript. Tailwind CSS and GSAP is used for styling and animations.
 
 **View my portfolio via the link in the repository's About section.**
 
 ## Features
 
+- Interactive UX
 - Responsive Design 📱💻
 - Light & Dark themes ☀️🌙
-- Fully Accessible 
+- Fully Accessible
 - SEO Friendly 🔎
-- Markdown Content 📰
--deployed in custom domain for both ipv4 and ipv6 and accesble with both apex domain(@)  and third level domain(www)
+  -deployed in custom domain(tejamallam.tech) for both ipv4 and ipv6 and accesble with both apex domain(@) and third level domain(www)
 
 ## Tech Stack
 
@@ -23,7 +22,6 @@ My portfolio & blog website developed with Next.JS(SSG) and TypeScript. Tailwind
 **State Management** - [ContextAPI](https://reactjs.org/docs/context.html)  
 **Backend** - [Forestry Headless CMS](https://forestry.io/)  
 **Deployment** - [Vercel](tejamallam.me)
-
 
 ## Running Locally
 
@@ -41,6 +39,14 @@ npm install
 
 Start the server
 
+For Dev environment
+
 ```bash
 npm run dev
+```
+
+For normal environment
+
+```bash
+npm start
 ```
