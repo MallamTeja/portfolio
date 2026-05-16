@@ -73,7 +73,7 @@ const projects = [
           style={{ fontFamily: "'Times New Roman', Times, serif" }}
           className="text-lg text-marrsgreen dark:text-carrigreen"
         >
-          tejamallam.me
+          f1predictor.tech
         </a>
       </>
     ),
