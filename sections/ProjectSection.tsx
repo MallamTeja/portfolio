@@ -83,16 +83,6 @@ const projects = [
     githubApi: "https://api.github.com/repos/MallamTeja/f1_models",
   },
   {
-    title: "Domain-Specific Small Language Model (SLM)",
-    type: "Deep Learning, RAG, Neural Networks",
-    desc:
-      "Fine-tuned a transformer model with X billion parameters using self-supervised learning, QLoRA, and PEFT. Added a dense RAG pipeline to increase accuracy and reduce hallucinations and latency.",
-    tags: ["Python", "PyTorch", "TensorFlow", "Deeplearning", "Keras", "Numpy", "Pandas", "FFN", "MLP", "VectorDB", "RAG", "FastAPI", "UviCorn", "FFNs", "MLPs"],
-    liveUrl: "https://slm.tech",
-    codeUrl: "https://github.com/MallamTeja/slm",
-    githubApi: "https://api.github.com/repos/MallamTeja/slm",
-  },
-  {
     title: "Skill Exchange",
     type: "Full-Stack",
     desc:
@@ -106,6 +96,16 @@ const projects = [
     liveUrl: "https://skillexchange.tech",
     codeUrl: "https://github.com/MallamTeja/1on1",
     githubApi: "https://api.github.com/repos/MallamTeja/1on1",
+  },
+  {
+    title: "Domain-Specific Small Language Model (SLM)",
+    type: "Deep Learning, RAG, Neural Networks",
+    desc:
+      "Fine-tuned a transformer model with X billion parameters using self-supervised learning, QLoRA, and PEFT. Added a dense RAG pipeline to increase accuracy and reduce hallucinations and latency.",
+    tags: ["Python", "PyTorch", "TensorFlow", "Deeplearning", "Keras", "Numpy", "Pandas", "FFN", "MLP", "VectorDB", "RAG", "FastAPI", "UviCorn", "FFNs", "MLPs"],
+    liveUrl: "https://slm.tech",
+    codeUrl: "https://github.com/MallamTeja/slm",
+    githubApi: "https://api.github.com/repos/MallamTeja/slm",
   },
   {
     title: "FinTrack (Personal Finance Tracker)",
