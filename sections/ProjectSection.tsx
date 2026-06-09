@@ -67,7 +67,7 @@ const projects = [
       <>
         Predicts the race pace of FormulaOne drivers using machine learning. live on {" "}
         <a
-          href="https://tejamallam.me"
+          href="https://f1predictor.tech"
           target="_blank"
           rel="noreferrer"
           style={{ fontFamily: "'Times New Roman', Times, serif" }}
