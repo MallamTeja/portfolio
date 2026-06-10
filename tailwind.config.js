@@ -21,11 +21,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        bglight: "#F9FAFB",
-        marrslight: "#1C9A9A",
-        marrsgreen: "#007A7A",
-        marrsdark: "#004D4D",
-        cardlight: "#EFF3F3",
+        bglight: "#fbffffff",
+        marrslight: "#167A7A",
+        marrsgreen: "#005C5C",
+        marrsdark: "#003D3D",
+        cardlight: "#C9D6D6",
 
         // bgdark: "#2D2D2D",
         bgdark: "#1D2A35",
