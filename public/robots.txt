@@ -5,3 +5,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://tejamallam.dev/sitemap.xml
+Sitemap: https://tejamallam.dev/geo.kml

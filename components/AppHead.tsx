@@ -63,6 +63,39 @@ const AppHead: React.FC<Props> = ({
       <title>{title}</title>
       <meta name="author" content={author} />
       <meta name="description" content={description} />
+      <meta name="geo.region" content="IN-TG" />
+      <meta name="geo.placename" content="Hyderabad, India" />
+      <meta name="geo.position" content="17.3850;78.4867" />
+      <meta name="ICBM" content="17.3850, 78.4867" />
+      <link rel="alternate" hrefLang="en" href={url} />
+      <link rel="alternate" hrefLang="en-IN" href={url} />
+      <link rel="alternate" hrefLang="x-default" href={url} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: author,
+            url,
+            email: "tejamallam1233@gmail.com",
+            telephone: "+91-9392256662",
+            jobTitle: "Aspiring Full Stack Developer",
+            description,
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Hyderabad",
+              addressRegion: "Telangana",
+              addressCountry: "IN",
+            },
+            sameAs: [
+              "https://www.linkedin.com/in/tejamallam",
+              "https://github.com/MallamTeja",
+              "https://x.com/Mallam_Teja",
+            ],
+          }),
+        }}
+      />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={appOgImage} />
