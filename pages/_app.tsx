@@ -9,6 +9,7 @@ import "../styles/globals.css";
 
 import gsap from "gsap";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 import { GA_MEASUREMENT_ID } from "@/lib/site";
 
@@ -74,6 +75,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </ProvideSection>
         </ProvideFilter>
       </ThemeProvider>
+      <Analytics />
     </>
   );
 }
