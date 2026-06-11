@@ -1,31 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns:geo="http://www.google.com/geo/schemas/sitemap/1.0"
->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tejamallam.dev/</loc>
+    <loc>https://tejamallam.me/</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://tejamallam.dev/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en-IN"
-      href="https://tejamallam.dev/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://tejamallam.dev/"
-    />
-    <geo:geo>
-      <geo:format>kml</geo:format>
-    </geo:geo>
   </url>
 </urlset>
