@@ -6,13 +6,14 @@ import LinkButton from "@/components/LinkButton";
 
 import { meta } from "pages";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 const Home: NextPage = () => {
   return (
     <>
       <AppHead
         title="Teja Mallam - A Full-stack Developer"
-        url={`${process.env.NEXT_PUBLIC_URL}`}
+        url={SITE_URL}
         meta={meta}
       />
       <div className="bg-bglight dark:bg-bgdark overflow-hidden">

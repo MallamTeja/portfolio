@@ -10,6 +10,8 @@ import "../styles/globals.css";
 import gsap from "gsap";
 import Script from "next/script";
 
+import { GA_MEASUREMENT_ID } from "@/lib/site";
+
 function MyApp({ Component, pageProps }: AppProps) {
   const cursorRef = useRef(null);
 
@@ -39,22 +41,25 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <Script
-        id="google-analytics"
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script id="google-analytics-script" strategy="lazyOnload">
-        {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-        page_path: window.location.pathname,
-        });
-    `}
-      </Script>
+      {GA_MEASUREMENT_ID ? (
+        <>
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          />
+          <Script id="google-analytics-script" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                page_path: window.location.pathname,
+              });
+            `}
+          </Script>
+        </>
+      ) : null}
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

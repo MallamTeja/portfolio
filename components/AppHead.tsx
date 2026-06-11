@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import { SITE_URL } from "@/lib/site";
+
 export interface Meta {
   description?: string;
   author?: string;
@@ -19,7 +21,7 @@ type Props = {
 
 const AppHead: React.FC<Props> = ({
   title,
-  url = `${process.env.NEXT_PUBLIC_URL}`,
+  url = SITE_URL,
   meta,
 }) => {
   let author = "Teja Mallam";
@@ -43,7 +45,7 @@ const AppHead: React.FC<Props> = ({
     ogImageAlt = meta.ogImageAlt && meta.ogImageAlt;
   }
 
-  let appOgImage = `${process.env.NEXT_PUBLIC_URL}/tejamallam-dev-og-new.png`;
+  let appOgImage = `${SITE_URL}/tejamallam-dev-og-new.png`;
   let appOgImageAlt = "Teja Mallam's Portfolio";
 
   if (ogImage) {

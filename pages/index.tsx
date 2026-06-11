@@ -11,13 +11,14 @@ import ProjectSection from "@/sections/ProjectSection";
 import SkillsSection from "@/sections/SkillsSection";
 import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
 
 export const meta = {
   description:
     "Teja Mallam is a Computer Science undergrad at MLR Institute of Technology. He is passionate about full-stack development and data analysis, building tech with intent and learning every single day.",
   author: "Teja Mallam",
   type: "website",
-  ogImage: `${process.env.NEXT_PUBLIC_URL}/tejamallam-og.png`,
+  ogImage: `${SITE_URL}/tejamallam-og.png`,
   siteName: "Teja Mallam",
   imageAlt: "Teja Mallam portfolio website",
 };
@@ -27,7 +28,7 @@ const Home: NextPage = () => {
     <>
       <AppHead
         title="Teja Mallam - Aspiring Full Stack Developer"
-        url={`${process.env.NEXT_PUBLIC_URL}`}
+        url={SITE_URL}
         meta={meta}
       />
       <Loader>TejaMallam.dev</Loader>

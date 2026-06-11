@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/sections/*": ["sections/*"]
+      "@/sections/*": ["sections/*"],
+      "@/lib/*": ["lib/*"]
     },
     "verbatimModuleSyntax": true,
     "noUncheckedIndexedAccess": true
